@@ -208,7 +208,9 @@ Ngoài report tháng 3 và kế hoạch tháng 4 gốc, hiện thấy thêm các
 
 Lưu ý:
 - `bulk hulk` có bằng chứng local trực tiếp mạnh
-- `cmc-chart-capture`, `telegram-rss-art`, `deep-research-coin` hiện có bằng chứng chắc nhất qua session note ngày `2026-05-04`, nên phù hợp ghi nhận là nhánh ngoài report, nhưng chưa nên cộng quá mạnh vào KPI core report
+- `cmc-chart-capture`, `telegram-rss-art` hiện có bằng chứng chắc nhất qua session note ngày `2026-05-04`
+- `deep-research-coin` hiện đối chiếu được rõ hơn ở mức repo: có `38` file trong `research-output` gồm `32 md` và `6 pdf`, cộng thêm `8` file bài/report ở root repo như `RAVE-analysis.md`, `RAVE-Research-Report.html`, `RAVE-Deep-Research-Coindesk.html`, `RAVE-WordPress.html`, `ETHFI-analysis.md`, `MONAD-analysis.md`, `ZAMA-analysis.md`, `ZAMA-analysis-VI.md`
+- các nhánh này phù hợp ghi nhận là công việc ngoài report, nhưng chưa nên cộng quá mạnh vào KPI core report
 
 ## 8. Chấm điểm tổng quan
 
