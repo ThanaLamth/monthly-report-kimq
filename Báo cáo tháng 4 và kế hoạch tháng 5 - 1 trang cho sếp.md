@@ -63,7 +63,7 @@ Lý do:
 - chốt `evergreen MVP` trên 1-2 site thay vì giữ ở mức ý tưởng
 - đi hết chuỗi `audit -> decision -> implementation -> verification` cho 3 site ưu tiên
 - dựng lớp KPI tối thiểu: site active, job thành công, bài publish, lỗi capture, batch audit/taxonomy đã xử lý
-- xử lý toàn bộ nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site, kèm `301/410/sửa inlinks` nếu có
+- mở rộng xử lý toàn bộ nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site; riêng `Coinlineup / Tokentopnews / TheCCPress` là 3 site đã xử lý trước, tháng 5 cần verify và rollout sang site còn lại, kèm `301/410/sửa inlinks` nếu có
 - đến tuần 4, mỗi site mục tiêu phải có ít nhất `3 bài evergreen`
 - tuần 3 phải có ít nhất `3 case` gộp `news cũ -> 1 bài evergreen cùng sector` trên nhóm `Tokentopnews / Trusts / Bitcoininfonews / TheCCPress`
 - trước khi hết nhịp `Sell in May`, tối thiểu `6 site` được update `UI/UX signature + trending` để sẵn sàng push sale tháng 6

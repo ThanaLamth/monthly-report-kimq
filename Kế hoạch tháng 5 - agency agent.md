@@ -25,7 +25,7 @@ Kết luận chính từ tháng 4:
 3. Chốt một phiên bản `evergreen MVP` khả dụng thay vì tiếp tục để ở mức ý tưởng.
 4. Hoàn tất một cụm `audit -> decision -> implementation -> verification` cho các site ưu tiên.
 5. Bắt đầu có lớp theo dõi KPI tối thiểu đủ để chứng minh tiến độ thật.
-6. Xử lý toàn bộ nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site, kèm `301/410/sửa inlinks` nếu có.
+6. Mở rộng xử lý toàn bộ nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site, sau khi đã xử lý trước đó cho `Coinlineup`, `Tokentopnews`, `TheCCPress`, kèm `301/410/sửa inlinks` nếu có.
 7. Sau khi xử lý link và indexation baseline, đến tuần 4 mỗi site mục tiêu phải có ít nhất `3 bài evergreen`.
 8. Chuẩn bị nền cho tháng 6: site nào có hơn `30 bài cluster evergreen` thì chuyển sang giai đoạn tạo `hubpage`.
 
@@ -101,6 +101,9 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - quyết định giữ / gộp / 301 / 410
   - sửa inlinks nội bộ trỏ vào URL cũ hoặc URL không cần giữ
   - verify lại trạng thái sau fix
+- Ghi chú:
+  - `Coinlineup`, `Tokentopnews`, `TheCCPress` được xem là 3 site đã xử lý trước cho nhóm việc này
+  - tháng 5 ưu tiên `verify closure` cho 3 site trên và mở rộng sang các site còn lại
 
 ### Priority C - Evergreen MVP
 
@@ -162,6 +165,9 @@ Nếu có thể:
 - Chốt bộ KPI vận hành tối thiểu.
 - Chọn 1-2 site để chạy evergreen MVP.
 - Chốt danh sách URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site.
+- Tách rõ:
+  - `3 site đã xử lý trước`: Coinlineup, Tokentopnews, TheCCPress
+  - `các site còn lại cần rollout trong tháng 5`
 - Chốt rule xử lý cho từng nhóm URL:
   - giữ và tối ưu
   - 301
@@ -174,6 +180,7 @@ Deliverables:
 - danh sách blocker theo site
 - bảng backlog URL chưa index theo từng site
 - rule sheet xử lý 301/410/inlinks
+- bảng phân nhóm `đã xử lý` vs `cần xử lý tiếp`
 
 ### Tuần 2
 
@@ -184,6 +191,11 @@ Deliverables:
   - TheCCPress
 - Bắt đầu chạy evergreen MVP trên 1 site.
 - Bắt đầu xử lý nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` cho các site ưu tiên.
+- Verify lại 3 site đã xử lý trước:
+  - Coinlineup
+  - Tokentopnews
+  - TheCCPress
+- Sau đó mở rộng xử lý sang các site còn lại.
 - Bắt đầu update `UI/UX signature + trending` cho các site sẽ dùng để push sale tháng 6.
 
 Deliverables:
@@ -193,6 +205,7 @@ Deliverables:
 - batch 301/410 đầu tiên
 - batch sửa inlinks đầu tiên
 - danh sách site đã update UI/UX/trending
+- biên bản verify lại 3 site đã xử lý trước
 
 ### Tuần 3
 
@@ -247,7 +260,9 @@ Deliverables:
 - Có ít nhất `1 workflow evergreen MVP` chạy ra output thật.
 - Có ít nhất `1 vòng verify sau fix` cho mỗi site ưu tiên audit.
 - Có report tuần mẫu và log lỗi tập trung.
-- Có bảng xử lý toàn bộ nhóm `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site mục tiêu.
+- Có bảng xử lý toàn bộ nhóm `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site mục tiêu, trong đó tách rõ:
+  - `Coinlineup`, `Tokentopnews`, `TheCCPress` là nhóm đã xử lý trước và cần verify lại
+  - các site còn lại là nhóm cần rollout tiếp trong tháng 5
 - Có tối thiểu `3 site` chạy case `gom news cũ -> 1 bài evergreen cùng sector`.
 - Có tối thiểu `6 site` đã update `UI/UX signature + trending`.
 
