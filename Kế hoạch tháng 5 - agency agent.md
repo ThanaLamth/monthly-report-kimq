@@ -25,6 +25,9 @@ Kết luận chính từ tháng 4:
 3. Chốt một phiên bản `evergreen MVP` khả dụng thay vì tiếp tục để ở mức ý tưởng.
 4. Hoàn tất một cụm `audit -> decision -> implementation -> verification` cho các site ưu tiên.
 5. Bắt đầu có lớp theo dõi KPI tối thiểu đủ để chứng minh tiến độ thật.
+6. Xử lý toàn bộ nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site, kèm `301/410/sửa inlinks` nếu có.
+7. Sau khi xử lý link và indexation baseline, đến tuần 4 mỗi site mục tiêu phải có ít nhất `3 bài evergreen`.
+8. Chuẩn bị nền cho tháng 6: site nào có hơn `30 bài cluster evergreen` thì chuyển sang giai đoạn tạo `hubpage`.
 
 ### Mục tiêu phụ
 
@@ -93,14 +96,44 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - decision sheet
   - implementation batch
   - verify lại sau fix
+- Với từng site, bổ sung thêm lớp xử lý:
+  - rà toàn bộ nhóm `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục`
+  - quyết định giữ / gộp / 301 / 410
+  - sửa inlinks nội bộ trỏ vào URL cũ hoặc URL không cần giữ
+  - verify lại trạng thái sau fix
 
 ### Priority C - Evergreen MVP
 
 - Chạy được một workflow evergreen mức tối thiểu trên 1-2 site.
 - Không yêu cầu full season/location.
 - Có artifact và output thật để chứng minh.
+- Từ tuần 3, bắt đầu làm hướng `gom news cũ -> 1 bài evergreen theo sector`.
+- Tối thiểu triển khai trên `3 site` trong nhóm:
+  - Tokentopnews
+  - Trusts
+  - Bitcoininfonews
+  - TheCCPress
+- Mỗi site mục tiêu đến tuần 4 phải có ít nhất `3 bài evergreen`.
 
-### Priority D - KPI tối thiểu
+### Priority D - UI/UX signature và trending readiness
+
+- Trước khi hết nhịp `Sell in May`, tối thiểu `6 site` phải được update:
+  - UI/UX signature
+  - khối/trục `trending`
+- Mục tiêu là ready cho đợt push sale tháng 6, không để sang tháng 6 mới bắt đầu chỉnh giao diện hoặc positioning trang.
+
+### Priority E - Scale format nội dung đã thắng ở Coincu
+
+- Hiện tại nhóm bài `review / research / why pump / why dump` đang có tín hiệu tốt:
+  - index tốt
+  - tỷ lệ hiện diện top đầu trên `CMC page coin` đang rất mạnh ở `Coincu`
+- Tháng 5 cần scale logic này sang các site còn lại, nhưng không copy y nguyên topic.
+- Hướng triển khai:
+  - giữ format/logic thắng
+  - đổi topic theo từng site
+  - chọn topic có khả năng index và chiếm vị trí tốt trên page coin tương ứng
+
+### Priority F - KPI tối thiểu
 
 - Thiết lập lớp theo dõi KPI đủ tối thiểu:
   - số site chạy thật
@@ -109,6 +142,9 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - số bài cần review
   - số lỗi capture
   - số batch taxonomy/audit đã hoàn tất
+  - số URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` đã xử lý xong
+  - số site đã đạt mốc `3 bài evergreen`
+  - số site đã update `UI/UX signature + trending`
 
 Nếu có thể:
 - thêm snapshot indexation / GSC / crawl health đơn giản
@@ -125,11 +161,19 @@ Nếu có thể:
 - Chốt format tracking chung cho tất cả site.
 - Chốt bộ KPI vận hành tối thiểu.
 - Chọn 1-2 site để chạy evergreen MVP.
+- Chốt danh sách URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site.
+- Chốt rule xử lý cho từng nhóm URL:
+  - giữ và tối ưu
+  - 301
+  - 410
+  - sửa inlinks
 
 Deliverables:
 - bảng trạng thái site
 - bảng KPI tối thiểu
 - danh sách blocker theo site
+- bảng backlog URL chưa index theo từng site
+- rule sheet xử lý 301/410/inlinks
 
 ### Tuần 2
 
@@ -139,11 +183,16 @@ Deliverables:
   - Tokentopnews
   - TheCCPress
 - Bắt đầu chạy evergreen MVP trên 1 site.
+- Bắt đầu xử lý nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` cho các site ưu tiên.
+- Bắt đầu update `UI/UX signature + trending` cho các site sẽ dùng để push sale tháng 6.
 
 Deliverables:
 - logs/job artifacts mới
 - verify batch sau audit
 - output evergreen đầu tiên
+- batch 301/410 đầu tiên
+- batch sửa inlinks đầu tiên
+- danh sách site đã update UI/UX/trending
 
 ### Tuần 3
 
@@ -154,11 +203,20 @@ Deliverables:
   - publish
   - QC
   - taxonomy/manual review
+- Gom các bài news cũ thành `1 bài evergreen cùng sector` trên ít nhất `3 site`.
+- Ưu tiên chọn trong nhóm:
+  - Tokentopnews
+  - Trusts
+  - Bitcoininfonews
+  - TheCCPress
+- Bắt đầu scale format bài `review / research / why pump / why dump` từ `Coincu` sang các site còn lại với topic khác.
 
 Deliverables:
 - 1 report tuần mẫu
 - 1 bảng lỗi tổng hợp
 - 1 bảng so sánh site active vs blocked
+- 3 case gộp `news -> evergreen` đầu tiên
+- 1 danh sách topic scale-up theo site ngoài Coincu
 
 ### Tuần 4
 
@@ -168,11 +226,17 @@ Deliverables:
   - chưa đủ rollout
   - chưa đủ thời gian index
   - chưa có lớp đo dữ liệu
+- Mỗi site mục tiêu phải có ít nhất `3 bài evergreen`.
+- Chốt tối thiểu `6 site` đã update `UI/UX signature + trending`.
+- Khóa danh sách site đã đủ điều kiện để tháng 6 dựng `hubpage` khi vượt mốc `30 bài cluster evergreen`.
 
 Deliverables:
 - tổng kết tháng 5
 - đề xuất kế hoạch tháng 6
 - bảng KPI thực tế vs mục tiêu
+- bảng theo dõi `3 evergreen / site`
+- danh sách `6 site` ready cho push sale tháng 6
+- shortlist site đủ điều kiện build hubpage tháng 6
 
 ## 6. KPI tháng 5
 
@@ -183,12 +247,18 @@ Deliverables:
 - Có ít nhất `1 workflow evergreen MVP` chạy ra output thật.
 - Có ít nhất `1 vòng verify sau fix` cho mỗi site ưu tiên audit.
 - Có report tuần mẫu và log lỗi tập trung.
+- Có bảng xử lý toàn bộ nhóm `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site mục tiêu.
+- Có tối thiểu `3 site` chạy case `gom news cũ -> 1 bài evergreen cùng sector`.
+- Có tối thiểu `6 site` đã update `UI/UX signature + trending`.
 
 ### KPI nên có
 
 - Có số liệu publish thực tế theo site.
 - Có số liệu review/capture fail theo site.
 - Có số liệu batch taxonomy/audit đã xử lý xong.
+- Có số liệu URL chưa index đã xử lý xong theo site.
+- Có số liệu site đã đạt mốc `3 bài evergreen`.
+- Có số liệu format bài từ `Coincu` đã scale sang bao nhiêu site.
 
 ### KPI không nên hứa quá mạnh trong tháng 5
 
@@ -217,7 +287,7 @@ Nếu bám đúng kế hoạch tháng 5 ở trên, hướng đi sẽ đúng hơn
 
 1. Bớt thiên về “đã có repo/tool” và tiến sang “đã chạy thật”.
 2. Bớt mở rộng chiều ngang, tập trung vào closure và verification.
-3. Tạo nền để tháng 6 có thể nói chuyện KPI thực hơn, thay vì chỉ nói kiến trúc.
+3. Tạo nền để tháng 6 có thể nói chuyện KPI thực hơn, hubpage rõ hơn, thay vì chỉ nói kiến trúc.
 
 ## 9. Kết luận ngắn
 
