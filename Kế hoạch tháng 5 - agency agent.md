@@ -2,6 +2,21 @@
 
 Ngày lập kế hoạch: 2026-05-04
 
+## 0. Tóm tắt điều hành
+
+Tháng 5 không phải tháng mở thêm hệ thống. Đây là tháng `đóng vòng`, `xác minh`, `nhân rộng có kiểm soát`.
+
+Ba kết quả bắt buộc nếu muốn tháng 6 đẩy sale và dựng hubpage đúng thời điểm:
+
+1. Verify xong `3 site` đã xử lý trước cho backlog `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục`:
+   - Coinlineup
+   - Tokentopnews
+   - TheCCPress
+2. Đưa backlog chưa index, evergreen và `UI/UX signature + trending` thành bảng kiểm soát theo site, không theo cảm giác.
+3. Chốt điều kiện qua tháng 6:
+   - site nào có trên `30 bài cluster evergreen` mới vào nhánh `hubpage`
+   - site nào chưa đạt mốc tối thiểu thì tiếp tục ưu tiên closure, không nâng scope
+
 ## 1. Cơ sở lập kế hoạch
 
 Kế hoạch tháng 5 này được rút ra từ:
@@ -84,6 +99,11 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - đã publish
   - đang lỗi
   - đang chờ review
+- Chủ trì:
+  - `Thana`
+- Kết quả cần có:
+  - bảng trạng thái vận hành theo site
+  - log hoặc artifact chứng minh site đã chạy thật
 
 ### Priority B - Audit và implementation closure
 
@@ -104,6 +124,12 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
 - Ghi chú:
   - `Coinlineup`, `Tokentopnews`, `TheCCPress` được xem là 3 site đã xử lý trước cho nhóm việc này
   - tháng 5 ưu tiên `verify closure` cho 3 site trên và mở rộng sang các site còn lại
+- Chủ trì:
+  - `Thana`
+- Kết quả cần có:
+  - biên bản verify cho 3 site đã xử lý trước
+  - rule rõ cho `giữ / gộp / 301 / 410 / sửa inlinks`
+  - backlog rollout cho site còn lại
 
 ### Priority C - Evergreen MVP
 
@@ -117,6 +143,11 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - Bitcoininfonews
   - TheCCPress
 - Mỗi site mục tiêu đến tuần 4 phải có ít nhất `3 bài evergreen`.
+- Chủ trì:
+  - `Thana`
+- Kết quả cần có:
+  - tối thiểu `3 case` `news cũ -> evergreen`
+  - bảng theo dõi `3 evergreen / site`
 
 ### Priority D - UI/UX signature và trending readiness
 
@@ -124,6 +155,10 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - UI/UX signature
   - khối/trục `trending`
 - Mục tiêu là ready cho đợt push sale tháng 6, không để sang tháng 6 mới bắt đầu chỉnh giao diện hoặc positioning trang.
+- Chủ trì:
+  - `Thana`
+- Kết quả cần có:
+  - danh sách `6 site` ready cho push sale tháng 6
 
 ### Priority E - Scale format nội dung đã thắng ở Coincu
 
@@ -135,6 +170,11 @@ Nếu làm được chuỗi này cho một nhóm site nhỏ, đó đã là đủ
   - giữ format/logic thắng
   - đổi topic theo từng site
   - chọn topic có khả năng index và chiếm vị trí tốt trên page coin tương ứng
+- Chủ trì:
+  - `Thana`
+- Kết quả cần có:
+  - danh sách topic scale-up theo site
+  - tối thiểu 1 vòng thử nghiệm ngoài `Coincu`
 
 ### Priority F - KPI tối thiểu
 
@@ -265,6 +305,16 @@ Deliverables:
   - các site còn lại là nhóm cần rollout tiếp trong tháng 5
 - Có tối thiểu `3 site` chạy case `gom news cũ -> 1 bài evergreen cùng sector`.
 - Có tối thiểu `6 site` đã update `UI/UX signature + trending`.
+
+### Cổng quyết định cuối tháng
+
+- Chỉ đưa site sang nhánh `hubpage` trong tháng 6 nếu có đủ:
+  - trên `30 bài cluster evergreen`
+  - evidence indexation ổn hơn trước
+  - backlog URL chưa index đã được xử lý ở mức chấp nhận được
+- Nếu chưa đạt 3 điều kiện trên:
+  - không nâng scope
+  - tiếp tục ưu tiên closure trong tháng 6
 
 ### KPI nên có
 

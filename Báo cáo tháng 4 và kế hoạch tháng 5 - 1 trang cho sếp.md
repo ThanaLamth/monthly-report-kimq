@@ -1,80 +1,41 @@
 # Báo cáo tháng 4 và kế hoạch tháng 5 - 1 trang cho sếp
 
-## 1. Tóm tắt điều hành
+## 1. Situation Overview
 
-- Tháng báo cáo: `Tháng 4/2026`
-- Người thực hiện: `Thana`
-- Điểm tổng quan: `7.2/10`
-- Kết luận ngắn: `Đúng hướng nhưng cần chuyển mạnh từ repo/tooling sang vận hành thật và KPI có bằng chứng`
+Tháng 4 xác nhận rõ một điểm: phần mạnh nhất hiện tại không phải `rollout breadth`, mà là `năng lực xây hệ thống`. Các trục đã có bằng chứng tốt gồm `news workflow`, `QC loop`, `article-evidence capture`, `taxonomy cleanup` và `SEO audit batching`. Tuy nhiên, trạng thái mong muốn cho giai đoạn tiếp theo không còn là “đã có repo/tool”, mà phải là `đã chạy thật`, `đã sửa thật`, `đã có KPI tối thiểu` và `đã nhân rộng được theo site`.
 
-Trong tháng 4, trọng tâm chính là:
+## 2. Key Findings
 
-- chuẩn hóa `news workflow` và `QC loop`
-- mở rộng `capture ảnh unique / article-evidence`
-- làm sâu `technical SEO / taxonomy / audit batching`
+**Workflow nền đã hình thành tương đối hoàn chỉnh.** Hệ hiện có các lớp `news-flow`, `writing-qc`, `integrate-capture-v2`, `author-news`, `cmc-author-dashboard`. **Hàm ý chiến lược: nền vận hành đã đủ tốt để chuyển trọng tâm từ build sang rollout và closure.**
 
-## 2. Kết quả nổi bật
+**Technical SEO là phần tiến xa nhất trong tháng 4.** Đã có full decision/remap/manual review và audit sâu cho `3 site`: `Coinlineup`, `Tokentopnews`, `TheCCPress`. **Hàm ý chiến lược: đây là cụm việc đã chứng minh được năng lực xử lý ở mức site-level, phù hợp dùng làm mẫu để nhân rộng.**
 
-- Đã hình thành hệ `workflow` khá rõ giữa `news-flow`, `writing-qc`, `integrate-capture-v2`, `author-news`, `cmc-author-dashboard`.
-- Đã làm sâu phần `taxonomy cleanup` và `SEO audit` cho `Coinlineup`, `Tokentopnews`, `TheCCPress`, bao gồm decision/remap/manual review và các batch triển khai ưu tiên.
-- Đã nâng `capture ảnh unique` từ utility chụp ảnh thành `article-evidence engine`, có planning, health check, persistent profile và utility chụp chart riêng.
+**Capture đã vượt mức utility rời rạc.** Hệ capture hiện đi theo hướng `article-evidence engine`, cộng thêm utility chụp chart riêng. **Hàm ý chiến lược: đây là lợi thế khác biệt cho content quality, trust và mức độ khó sao chép.**
 
-Giá trị tạo ra:
+**Nhiều việc ngoài report có giá trị thật nhưng chưa nên cộng vào KPI core.** Có `216` dòng dry-run ở `bulk hulk`; `deep-research-coin` có `38` file trong `research-output` gồm `32 md`, `6 pdf`, cộng thêm `8` file bài/report ở root. **Hàm ý chiến lược: có chiều sâu thử nghiệm, nhưng tháng 5 phải ưu tiên core system trước.**
 
-- tăng mức hệ thống hóa và khả năng scale
-- giảm phụ thuộc vào xử lý tay rời rạc
-- tăng độ tin cậy của bài viết, audit và artifact
+**Gap lớn nhất vẫn là bằng chứng vận hành và outcome.** Chưa xác nhận được `14/14 site rollout`; chưa có bằng chứng đủ chắc cho `season/location`, `evergreen full chain`, và `KPI SEO outcome`. **Hàm ý chiến lược: nếu không khóa scope tháng 5, hệ sẽ tiếp tục mạnh về kiến trúc nhưng yếu về chứng minh hiệu quả.**
 
-## 3. Phần đã làm được theo kế hoạch
+## 3. Business Impact
 
-- Đã đi rất xa ở trục `workflow`, `QC`, `capture`, `taxonomy`, `audit`.
-- Đã có thêm nhánh `CoinMarketCap author workflow` với dashboard, multi-variant article craft, WordPress scheduling, Google Sheets và Telegram notify.
-- Đã có thêm một số công việc ngoài report nhưng có giá trị thật như `bulk hulk`, `deep-research-coin`, `cmc-chart-capture`, `telegram-rss-art`.
+Nếu giữ đúng trọng tâm tháng 5, hệ có cơ sở nâng từ `7.2/10` lên khoảng `8.0/10` mà không cần overclaim. Cửa thắng nằm ở `closure`, không nằm ở mở thêm nhánh mới: verify xong `3 site` đã xử lý trước, rollout indexation sang site còn lại, đạt tối thiểu `6 site` ready cho push sale tháng 6, và đưa mỗi site mục tiêu lên `3 bài evergreen`. Nếu làm trượt các mốc này, tháng 6 sẽ thiếu nền để đẩy `hubpage` và scale sale.
 
-## 4. Phần chưa làm được hoặc chưa có bằng chứng đủ chắc
+## 4. Recommendations
 
-- Chưa xác nhận được `14/14 site rollout`.
-- Chưa có bằng chứng đủ chắc cho `season/location`.
-- Chưa chốt được `evergreen full chain` ở mức chạy thật có artifact đầy đủ.
-- Chưa có lớp KPI đủ chắc để xác nhận `Semrush traffic`, `indexation` hay outcome SEO thực tế.
+**[Critical]** Khóa trọng tâm tháng 5 vào `runtime evidence` và `indexation closure`  
+Chủ trì: `Thana` | Hạn: `Tuần 1` khóa scope, `Tuần 2-4` thực thi | Kết quả mong đợi: toàn bộ backlog `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` được phân nhóm rõ theo site, trong đó `Coinlineup / Tokentopnews / TheCCPress` được verify lại thay vì làm lại từ đầu.
 
-## 5. Đánh giá hướng đi
+**[Critical]** Dùng `3 site` đã xử lý trước làm benchmark và nhân rộng  
+Chủ trì: `Thana` | Hạn: `Tuần 2` | Kết quả mong đợi: có biên bản verify closure cho `Coinlineup`, `Tokentopnews`, `TheCCPress`, kèm rule giữ / gộp / `301` / `410` / sửa inlinks để rollout sang site còn lại.
 
-Nhận định:
+**[High]** Chốt output evergreen theo tuần thay vì theo ý tưởng  
+Chủ trì: `Thana` | Hạn: `Tuần 3-4` | Kết quả mong đợi: ít nhất `3 case` `news cũ -> evergreen` trên nhóm `Tokentopnews / Trusts / Bitcoininfonews / TheCCPress`, và mỗi site mục tiêu đạt tối thiểu `3 bài evergreen`.
 
-- `Đúng hướng`
+**[High]** Chuẩn bị sale tháng 6 từ cuối tháng 5  
+Chủ trì: `Thana` | Hạn: `trước khi hết Sell in May` | Kết quả mong đợi: tối thiểu `6 site` update `UI/UX signature + trending`, đồng thời giữ ngưỡng tháng 6 là chỉ dựng `hubpage` khi site vượt `30 bài cluster evergreen`.
 
-Lý do:
+## 5. Next Steps
 
-- đang ưu tiên đúng vào các lớp nền tảng có thể tái sử dụng: workflow, QC, capture, taxonomy, audit
-- các repo và artifact đã nối thành một hệ tương đối logic
-- điểm yếu hiện tại chủ yếu là closure runtime và data proof, không phải thiếu năng lực xây hệ thống
-
-## 6. Công việc ngoài kế hoạch nhưng đáng ghi nhận
-
-- đóng gói `writing-qc` thành skill QA/SEO review riêng
-- làm `full decision/remap/manual review` và `full SEO audit` cho 3 site ưu tiên
-- triển khai `deep-research-coin` với `38` file trong `research-output` và thêm `8` file bài/report ở root repo
-- dựng `bulk hulk` cho bulk scheduling/publishing từ Google Sheet
-
-## 7. Trọng tâm tháng 5
-
-- chuyển từ `đã có repo/tool` sang `đã chạy thật có log và artifact`
-- chốt `evergreen MVP` trên 1-2 site thay vì giữ ở mức ý tưởng
-- đi hết chuỗi `audit -> decision -> implementation -> verification` cho 3 site ưu tiên
-- dựng lớp KPI tối thiểu: site active, job thành công, bài publish, lỗi capture, batch audit/taxonomy đã xử lý
-- mở rộng xử lý toàn bộ nhóm URL `Đã thu thập dữ liệu – hiện chưa được lập chỉ mục` theo từng site; riêng `Coinlineup / Tokentopnews / TheCCPress` là 3 site đã xử lý trước, tháng 5 cần verify và rollout sang site còn lại, kèm `301/410/sửa inlinks` nếu có
-- đến tuần 4, mỗi site mục tiêu phải có ít nhất `3 bài evergreen`
-- tuần 3 phải có ít nhất `3 case` gộp `news cũ -> 1 bài evergreen cùng sector` trên nhóm `Tokentopnews / Trusts / Bitcoininfonews / TheCCPress`
-- trước khi hết nhịp `Sell in May`, tối thiểu `6 site` được update `UI/UX signature + trending` để sẵn sàng push sale tháng 6
-- scale format bài `review / research / why pump / why dump` đã thắng ở `Coincu` sang các site khác với topic khác
-
-Định hướng tháng 6:
-
-- site nào có trên `30 bài cluster evergreen` thì bắt đầu dựng `hubpage`
-
-## 8. Hỗ trợ / quyết định cần từ quản lý
-
-- chốt rõ danh sách site ưu tiên trong tháng 5: `production active`, `ready but not active`, `blocked`
-- thống nhất không mở thêm quá nhiều nhánh mới nếu chưa đóng vòng vận hành core system
-- nếu cần báo cáo KPI outcome, phải cấp hoặc chốt luôn nguồn dữ liệu đo đủ tin cậy
+1. Khóa ngay danh sách site theo 3 nhóm: `đã xử lý`, `cần verify`, `cần rollout` trong `Tuần 1`.
+2. Chốt bảng KPI tháng 5 theo site: `pipeline chạy thật`, `URL chưa index đã xử lý`, `số evergreen`, `UI/UX + trending`.
+3. Ra quyết định quản lý trước cuối `Tuần 1`: tháng 5 ưu tiên `closure core system`, không mở thêm nhánh lớn mới nếu không phục vụ trực tiếp cho rollout tháng 6.
