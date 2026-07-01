@@ -10,9 +10,34 @@
 
 ## Executive summary ngắn
 
-Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup thuần SEO sang `rollout frontend/headless + trust/EEAT + migration ops` trên nhiều site cùng lúc. Điểm mạnh nhất của tháng là đã tạo được nhiều bề mặt public mới có thể deploy hoặc staging được cho CoinLineup, TheCCPress, Tokentopnews, AiCryptoCore, Kanalcoin, NFTENEX, Marketbit, TrustCrypto, Coinwy và Cryptodailyalert; đồng thời chuẩn hóa thêm trust pages, author presentation, RSS/sitemap/feed/metadata, và pipeline canonicalization đa site.
+Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup thuần SEO sang `rollout frontend/headless + trust/EEAT + migration ops` trên nhiều site cùng lúc. Điểm mạnh nhất của tháng là đã tạo được nhiều bề mặt public mới; và tính đến ngày `2026-07-01`, kiểm tra live domain cho thấy `CoinLineup`, `TheCCPress`, `Tokentopnews`, `AiCryptoCore`, `NFTENEX`, `TrustsCrypto`, `BitcoinInfoNews`, `CryptoDailyAlert` và nhiều khả năng `Coinwy` đang phục vụ frontend mới trực tiếp trên public apex domain. Đồng thời, network cũng được chuẩn hóa thêm trust pages, author presentation, RSS/sitemap/feed/metadata và pipeline canonicalization đa site.
 
 Điểm cần viết thận trọng là `Coincu backlog closure` không có đủ bằng chứng để claim đã đóng xong trong tháng 6. Dấu vết rõ nhất của Coincu trong tháng là export GSC/audit, trust-page content và author-profile work; chưa thấy bằng chứng mạnh tương ứng với mục tiêu “hoàn tất cleanup URL structure, internal lỗi, sitemap lỗi, remap content và recrawl validation”.
+
+## Correction note sau khi kiểm tra live production ngày 2026-07-01
+
+- `Đã cutover public frontend rõ ràng`:
+  - CoinLineup
+  - TheCCPress
+  - Tokentopnews
+  - AiCryptoCore
+  - NFTENEX
+  - TrustsCrypto
+  - BitcoinInfoNews
+  - CryptoDailyAlert
+- `Đang public frontend mới nhưng còn tín hiệu cần sửa`:
+  - Coinwy
+    - apex đang phục vụ frontend mới
+    - nhưng homepage vẫn phát `noindex, nofollow`, nên chưa nên coi là cutover SEO hoàn tất
+- `Chưa thấy cutover production ở public domain`:
+  - Kanalcoin
+    - `https://kanalcoin.com` redirect sang `https://www.kanalcoin.com/`
+    - đích vẫn là WordPress/PHP
+  - Marketbit
+    - `https://marketbit.net` vẫn trả WordPress/PHP
+- `Chưa xác nhận được public domain`:
+  - Defiliban
+    - `defiliban.com` không resolve được tại thời điểm kiểm tra ngày `2026-07-01`
 
 ## 1. Các cụm công việc đã làm trong tháng 6
 
@@ -28,22 +53,28 @@ Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup 
 - `Tokentopnews`:
   - Có cả nhánh staging App Router lẫn legacy preview.
   - Làm parity UI với source cũ, bổ sung live market data, feed, sitemap, ads.txt, media redirects và tài liệu cutover/transfer.
+  - Kiểm tra live ngày `2026-07-01` cho thấy public apex domain đang phục vụ frontend Next.js mới.
 - `AiCryptoCore`:
   - Mở workspace Next.js riêng.
   - Làm lại market pages, coin detail pages, biểu đồ, hero, editorial typography, AI trading mock, route hardening.
 - `Kanalcoin`:
   - Buildout khá sâu phần platform UI, mobile responsive, converter, login/publishing mock, about/legal, feed parity.
+  - Nhưng kiểm tra live ngày `2026-07-01` cho thấy public domain vẫn redirect về `www` WordPress, chưa phải cutover production.
 - `NFTENEX`:
   - Dựng lại frontend nối WordPress REST, author routes, search, sitemap, RSS, trust pages, market/NFT sections.
 - `Marketbit`:
   - Có migration plan riêng từ WordPress sang Next.js.
   - Tạo app router workspace, thêm trust pages, RSS, live market widgets, staging indexing hardening.
+  - Nhưng kiểm tra live ngày `2026-07-01` cho thấy `marketbit.net` vẫn là WordPress/PHP.
 - `TrustCrypto`:
   - Khởi tạo bản redesign V2 rồi chuyển sang nền headless WordPress đa ngôn ngữ, trust pages, author archives, search, market board data.
+  - Kiểm tra live ngày `2026-07-01` cho thấy public apex domain đang phục vụ frontend Next.js mới.
 - `Coinwy`:
   - Có hai lớp việc: một nhánh thiên về UI mock/design và một nhánh headless WordPress/content parity/cutover prep.
+  - Kiểm tra live ngày `2026-07-01` cho thấy apex đang lên frontend mới; tuy nhiên homepage còn phát `noindex, nofollow`, nên nên xếp là cutover public nhưng chưa sạch SEO.
 - `Cryptodailyalert`:
   - Dựng frontend theo source design, nối WordPress data, trust suite, live widgets, metadata/schema/sitemap hygiene, cutover routing.
+  - Kiểm tra live ngày `2026-07-01` cho thấy public apex domain đã lên frontend mới.
 - `Defiliban`:
   - Không còn là cleanup SEO đơn thuần; dấu vết tháng 6 cho thấy đang có một build/spec mới khá đầy đủ cho product, UI và live price integration.
 
@@ -92,16 +123,15 @@ Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup 
 
 ### Mạnh và có bằng chứng triển khai rõ
 
-- `CoinLineup`: build headless frontend, trust suite, newsletter, preview/revalidation, canonical cleanup plan.
-- `TheCCPress`: headless cutover, trust/legal suite, RSS/feed, sponsored/noindex, people directory, Sevio ads.
-- `Tokentopnews`: staging dual-run, UI parity, live market data, feed/sitemap/ads/media handling, transfer plan.
-- `AiCryptoCore`: Next.js workspace hoàn chỉnh hơn, market/coin pages, chart system, AI trading mock.
-- `Kanalcoin`: UI rollout lớn, responsive, publishing/login/about/legal, feed parity.
-- `NFTENEX`: WordPress data integration, trust pages, SEO routing, search UX, sitemap, RSS.
-- `Marketbit`: migration planning + Next.js app + live feeds + trust pages.
-- `TrustCrypto`: redesign + multilingual headless foundation + market board + trust pages.
-- `Coinwy`: một nhánh UI mock mạnh và một nhánh headless WordPress/content parity.
-- `Cryptodailyalert`: source-design mirror -> WordPress frontend -> trust/cutover/SEO hygiene.
+- `CoinLineup`: build headless frontend, trust suite, newsletter, preview/revalidation, canonical cleanup plan; live production cutover đã thấy trên apex domain.
+- `TheCCPress`: headless cutover, trust/legal suite, RSS/feed, sponsored/noindex, people directory, Sevio ads; live production cutover đã thấy trên apex domain.
+- `Tokentopnews`: staging dual-run, UI parity, live market data, feed/sitemap/ads/media handling, transfer plan; live production cutover đã thấy trên apex domain.
+- `AiCryptoCore`: Next.js workspace hoàn chỉnh hơn, market/coin pages, chart system, AI trading mock; live production cutover đã thấy trên apex domain.
+- `NFTENEX`: WordPress data integration, trust pages, SEO routing, search UX, sitemap, RSS; live production cutover đã thấy trên apex domain.
+- `TrustCrypto`: redesign + multilingual headless foundation + market board + trust pages; live production cutover đã thấy trên apex domain.
+- `Bitcoininfonews`: trước đó đánh giá bằng chứng code yếu hơn, nhưng kiểm tra live ngày `2026-07-01` cho thấy apex đang phục vụ frontend Next.js mới.
+- `Cryptodailyalert`: source-design mirror -> WordPress frontend -> trust/cutover/SEO hygiene; live production cutover đã thấy trên apex domain.
+- `Coinwy`: một nhánh UI mock mạnh và một nhánh headless WordPress/content parity; apex đã lên frontend mới nhưng còn `noindex, nofollow`.
 
 ### Có việc thật nhưng bằng chứng triển khai yếu hơn hoặc thiên về hỗ trợ
 
@@ -111,13 +141,13 @@ Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup 
   - Chưa thấy đủ bằng chứng để claim đóng backlog technical.
 - `Bitcoininfonews`:
   - Có demo/source assets, trust pages, pipeline fix dùng `www` MCP endpoint, đổi author trong pipeline.
-  - Chưa thấy bằng chứng rollout frontend sâu tương đương CoinLineup/TTN/CCPress.
+  - Tuy nhiên kiểm tra live ngày `2026-07-01` cho thấy public apex domain đã lên frontend Next.js mới, nên mức đánh giá cần nâng lên ở chiều production state.
 - `Coinlive`:
   - Có trust pages và author remediation.
   - Không thấy cụm code rollout lớn trong tháng 6.
 - `Defiliban`:
   - Có build/spec/product work mới và live price integration.
-  - Nhưng không thấy bằng chứng mới tương đương claim tăng index/cleanup như tháng 5.
+  - Nhưng không thấy bằng chứng mới tương đương claim tăng index/cleanup như tháng 5, và public domain chưa resolve được tại thời điểm kiểm tra ngày `2026-07-01`.
 
 ## 3. So sánh với báo cáo tháng 5 và kế hoạch tháng 6
 
@@ -134,19 +164,23 @@ Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup 
 
 - Đánh giá: `Đạt mạnh, thậm chí mở rộng hơn kế hoạch`.
 - Lý do:
-  - Có bằng chứng rất mạnh ở CoinLineup, Tokentopnews, TheCCPress, AicryptoCore, Kanalcoin.
-  - Có thêm rollout ở NFTENEX, Marketbit, TrustCrypto, Coinwy, Cryptodailyalert.
+  - Có bằng chứng rất mạnh ở CoinLineup, Tokentopnews, TheCCPress, AicryptoCore.
+  - Kiểm tra live ngày `2026-07-01` xác nhận production frontend mới đã xuất hiện công khai ở CoinLineup, TheCCPress, Tokentopnews, AiCryptoCore, NFTENEX, TrustsCrypto, BitcoinInfoNews, CryptoDailyAlert và nhiều khả năng Coinwy.
 - Lưu ý:
-  - `Bitcoininfonews` không có bằng chứng rollout sâu bằng các site còn lại.
-  - Nhiều site vẫn đang ở trạng thái staging/dual-run/headless foundation, chưa nên claim full production cutover.
+  - `Kanalcoin` và `Marketbit` chưa nên xếp vào nhóm đã cutover production.
+  - `Coinwy` đang có public frontend mới nhưng còn `noindex, nofollow`, nên chưa nên coi là hoàn tất ở góc SEO.
 
 ### Ưu tiên 3 tháng 6: Đóng audit còn mở và theo dõi recrawl
 
-- Đánh giá: `Một phần, nhưng hướng triển khai đã chuyển từ audit sang build/cutover`.
+- Đánh giá: `Một phần, nhưng nhiều hạng mục baseline đã được làm rồi`.
 - Lý do:
   - CoinLineup đã đi xa hơn audit và bước sang migration/cutover prep.
   - NFTENEX không chỉ “đóng audit” mà đã có cụm build headless và SEO routing rõ.
-  - Không thấy bằng chứng recrawl validation outcome kiểu Search Console tăng trưởng tương đương tháng 5.
+  - Kiểm tra live ngày `2026-07-01` cho thấy `CoinLineup`, `TheCCPress`, `AiCryptoCore`, `BitcoinInfoNews`, `NFTENEX`, `TrustsCrypto`, `CryptoDailyAlert` đã có baseline `canonical/robots/sitemap` khá ổn.
+  - `Tokentopnews` và `Coinwy` là hai site cần hậu kiểm thêm sau cutover:
+    - `Tokentopnews`: `sitemap.xml` còn `307` sang `www`, `robots.txt` chưa phải dạng crawl policy chuẩn.
+    - `Coinwy`: homepage còn `noindex, nofollow`, `robots.txt` còn `Disallow: /`.
+  - `Kanalcoin` và `Marketbit` chưa nên gom vào nhóm này vì public domain vẫn chưa cutover production.
 
 ### Ưu tiên 4 tháng 6: Mở rộng authority và chuẩn hóa base SEO/EEAT
 
@@ -161,6 +195,7 @@ Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup 
 ### Nên nhấn mạnh
 
 - Network đã chuyển từ giai đoạn cleanup/audit sang giai đoạn `build public surfaces + staging/cutover readiness`.
+- Một phần các project đã đi xa hơn nhận định ban đầu: tính đến ngày `2026-07-01`, nhiều site đã thực sự lên public frontend mới trên apex domain.
 - Đã tạo ra các tài sản dùng lại được cho toàn network:
   - migration playbook
   - cutover handoff
@@ -174,15 +209,16 @@ Tháng 6 cho thấy trọng tâm thực tế đã dịch từ technical cleanup 
 
 - Không claim `Coincu cleanup hoàn tất`.
 - Không claim `traffic/revenue outcome`.
-- Không gom tất cả site vào trạng thái “đã live hoàn chỉnh”; nhiều site mới ở mức:
-  - staging
-  - headless foundation
-  - dual-run
-  - cutover prep
+- Không gom tất cả site vào trạng thái “đã live hoàn chỉnh”.
+- Tách riêng:
+  - nhóm đã cutover public frontend
+  - nhóm đã cutover và baseline crawl/index khá ổn
+  - nhóm đã public nhưng còn lỗi SEO/crawl protection như `Tokentopnews` và `Coinwy`
+  - nhóm chưa cutover production như `Kanalcoin` và `Marketbit`
 
 ## 5. Gợi ý câu Executive Summary cho báo cáo tháng 6
 
-Tháng 6/2026 là giai đoạn network chuyển mạnh từ audit/cleanup sang rollout frontend headless, trust/EEAT và cutover readiness trên nhiều site cùng lúc. Kết quả nổi bật nhất là CoinLineup, TheCCPress, Tokentopnews, AiCryptoCore, Kanalcoin, NFTENEX, Marketbit, TrustCrypto, Coinwy và Cryptodailyalert đều đã có tiến triển rõ ở lớp public frontend, metadata/discovery và trust pages; tuy nhiên Coincu vẫn chưa có đủ bằng chứng để claim closure technical backlog, nên đây tiếp tục là điểm nghẽn cần ưu tiên cao trong tháng 7.
+Tháng 6/2026 là giai đoạn network chuyển mạnh từ audit/cleanup sang rollout frontend headless, trust/EEAT và cutover readiness trên nhiều site cùng lúc. Kiểm tra live ngày `2026-07-01` cho thấy CoinLineup, TheCCPress, Tokentopnews, AiCryptoCore, NFTENEX, TrustsCrypto, BitcoinInfoNews, CryptoDailyAlert và nhiều khả năng Coinwy đã lên public frontend mới trên apex domain; trong khi Kanalcoin và Marketbit vẫn chưa cutover production. Tuy nhiên Coincu vẫn chưa có đủ bằng chứng để claim closure technical backlog, nên đây tiếp tục là điểm nghẽn cần ưu tiên cao trong tháng 7.
 
 ## 6. File bằng chứng nên mở lại khi viết báo cáo
 
